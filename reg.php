@@ -25,14 +25,14 @@
                     </div>
                     <div>
                         <label>Имя</label>
-                        <input type="text" name="username">
+                        <input type="text" name="clientname">
                     </div>
                 </div>
                 <label>Email</label>
                 <input type="email" class="one-line" name="email">
 
                 <label>Пароль</label>
-                <input type="password" class="one-line" name="password">
+                <input type="password" class="one-line" name="clientpassword">
 
                 <button type="submit">Зарегистрироваться</button>
             </form>
