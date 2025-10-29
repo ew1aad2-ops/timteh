@@ -28,25 +28,10 @@ if (strlen($clientpassword) < 4) {
 }
 
 //password cash
-$salt = '190530222';
+$salt = "190530222";
 $clientpassword = md5($salt.$clientpassword);
-
-$host = 'localhost';
-$dbname = 'ew1aadgy_5';
-$username = 'ew1aadgy_5';
-$password = 'Dd250283';
-
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-
-    // Настройки PDO
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
-    //echo "Подключение успешно!";
-} catch (PDOException $e) {
-    die("Ошибка подключения: " . $e->getMessage());
-}
+ //DB
+ require "db.php";
 
 $stmt = $pdo->prepare("INSERT INTO users (login, username, email, password) VALUES (?,?,?,?)");
 //echo "test успешно!";
